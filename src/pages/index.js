@@ -3,37 +3,61 @@ import { graphql, useStaticQuery } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Mobile from '../images/mobilehero.jpg'
+import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
-export default function RootIndex({ data }) {
-  console.log(data)
-  return (
-    <div>
-    <img style={{ width: '100%', height: 'auto', position: 'absolute' }}src={Mobile} alt='hero' />
-    <Layout>
-      <div>
-        <div>{data.allContentfulPerson.edges.node}</div>
-      </div>
-    </Layout>
-    </div>
-  )
-}
-  export const query = graphql`
-    query {
+export default function RootIndex() {
+  const data = useStaticQuery(graphql`
+    {
       allContentfulPerson {
         edges {
           node {
+            title
+            subtitle
             image {
-              id
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyContentfulFluid
+              }
             }
           }
         }
       }
     }
-  `
-
-  
-
+  `)
+  console.log(data)
+  const img = data.allContentfulPerson.edges[0].node.image
+  const title = data.allContentfulPerson.edges[0].node.title
+  const subtitle = data.allContentfulPerson.edges[0].node.subtitle
+  return (
+    <div>
+      <Layout>
+        <div>
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
+          <Img fluid={img.fluid} />
+        </div>
+      </Layout>
+    </div>
+  )
+}
+//fluid max width cannot be done in graphql, only editor
+// export const query = graphql`
+//   query {
+//     allContentfulPerson {
+//       edges {
+//         node {
+//           title
+//           subtitle
+//           image {
+//             fluid(maxWidth: 900, quality: 100) {
+//               ...GatsbyContentfulFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 // const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 // const [author] = get(this, 'props.data.allContentfulPerson.edges')

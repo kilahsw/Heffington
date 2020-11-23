@@ -4,29 +4,26 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 // import Navigation from './navigation'
 
 export default function Layout({ children }) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allContentfulPerson {
-          edges {
-            node {
-              image {
-                id
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-  return <div>
-{/* 
-    <Link to={'/'}>
-      <div>{data.allContentfulPerson.edges.node.image.id}</div>
-    </Link>
-    {children} */}
-
+  // const data = useStaticQuery(
+  //   graphql`
+  //     query {
+  //       allContentfulPerson {
+  //         edges {
+  //           node {
+  //             image {
+  //               id
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  
+  return(
+  <div>
+    {children}
   </div>
+  ) 
 }
 // class Template extends React.Component {
 //   render() {
