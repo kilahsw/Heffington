@@ -1,28 +1,42 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
-import Hero from '../components/hero'
+import Mobile from '../images/mobilehero.jpg'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
 
-class RootIndex extends React.Component {
-  render() {
-   
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
-
-    return (
-      <Layout location={this.props.location}>
-        <div>
-          
-        </div>
-      </Layout>
-    )
-  }
+export default function RootIndex({ data }) {
+  console.log(data)
+  return (
+    <div>
+    <img style={{ width: '100%', height: 'auto', position: 'absolute' }}src={Mobile} alt='hero' />
+    <Layout>
+      <div>
+        <div>{data.allContentfulPerson.edges.node}</div>
+      </div>
+    </Layout>
+    </div>
+  )
 }
+  export const query = graphql`
+    query {
+      allContentfulPerson {
+        edges {
+          node {
+            image {
+              id
+            }
+          }
+        }
+      }
+    }
+  `
 
-export default RootIndex
+  
+
+
+// const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+// const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
 // export const pageQuery = graphql`
 //   query HomeQuery {
@@ -76,9 +90,9 @@ export default RootIndex
 //     }
 //   }
 // `
-//original blog page content. may need map reference for vids - posted in the RETURN 
+//original blog page content. may need map reference for vids - posted in the RETURN
 //  {
-   /* <div className="wrapper">
+/* <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
