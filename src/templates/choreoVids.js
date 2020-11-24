@@ -1,11 +1,50 @@
-// import React from 'react'
-// import { graphql } from 'gatsby'
-// import { Helmet } from 'react-helmet'
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 // import get from 'lodash/get'
-// import Img from 'gatsby-image'
-// import Layout from '../components/layout'
+import Img from 'gatsby-image'
+import Layout from '../components/layout'
 
-// import heroStyles from '../components/hero.module.css'
+export default function choreoTemplate(props) {
+  const tabTitle = props.data.site.siteMetadata.title
+  const object = props.data.allContentfulChoreography.edges[0] //may need a [0]
+
+  const title = object.node.title
+  const video = object.node.video.id
+
+  console.log(props)
+
+  return (
+    <Layout>
+      <div>
+        <Helmet title={`${title} | ${tabTitle}`} />
+        <h1>{title}</h1>
+        <div>{video}</div>
+      </div>
+    </Layout>
+  )
+}
+
+export const pageQuery = graphql`
+  query choreoVidsQuery($workName: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    allContentfulChoreography(filter: { titleUrl: { eq: $workName } }) {
+      edges {
+        node {
+          title
+          video {
+            id
+          }
+        }
+      }
+    }
+  }
+`
 
 // class BlogPostTemplate extends React.Component {
 //   render() {

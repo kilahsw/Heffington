@@ -1,54 +1,56 @@
 // const Promise = require('bluebird')
-// const path = require('path')
+const path = require('path')
 
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
 
-//   return new Promise((resolve, reject) => {
-//     const about = path.resolve('./src/templates/about.js')
-//     resolve(
-//       graphql(
-//         `
-//           {
-//             allContentfulBio {
-//               edges {
-//                 node {
-//                   image {
-//                     id
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         `
-//       ).then((result) => {
-//         if (result.errors) {
-//           console.log(result.errors)
-//           reject(result.errors)
-//         }
-        
-//         const bio = result.data.allContentfulBio.edges(
-//           createPage({
-//             path: `/about`
-//           })
-//         )
+  return new Promise((resolve, reject) => {
+    const choreoVids = path.resolve('./src/templates/choreoVids.js')
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulChoreography {
+              edges {
+                node {
+                  title
+                  titleUrl
+                }
+              }
+            }
+          }
+        `
+      ).then((result) => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
 
+        result.data.allContentfulChoreography.edges.map(work => {
+          createPage({
+            path: `/choreo/${work.node.titleUrl}`,
+            component: choreoVids,
+            context: {
+              workName: work.node.titleUrl,
+            },
+          })
+        })
+      })
+    )
+  })
+}
 
-
-
-
-
-        // const posts = result.data.allContentfulBlogPost.edges
-        // posts.forEach((post, index) => {
-        //   createPage({
-        //     path: `/blog/${post.node.slug}/`,
-        //     component: blogPost,
-        //     context: {
-        //       slug: post.node.slug
-        //     },
-        //   })
-        // })
-//       })
-//     )
+//   posts.forEach((post, index) => {
 //   })
-// }
+
+// result.data.allContentfulChoreography.edges.map((work => {
+
+//     createPage({
+//       path: `/${work.node.title}/`,
+//       component: choreoVids,
+//       context: {
+//         workName: work.node.title,
+//       }
+//     })
+
+// })
