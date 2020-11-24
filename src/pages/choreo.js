@@ -10,6 +10,7 @@ export default function Choreo() {
         edges {
           node {
             title
+            titleUrl
             thumbnail {
               fluid(maxWidth: 900, quality: 100) {
                 ...GatsbyContentfulFluid
@@ -33,8 +34,10 @@ export default function Choreo() {
         <div>
           {choreo.map((work, index) => (
             <div key={index}>
-              <h3>{work.node.title}</h3>
-              <Img fluid={work.node.thumbnail.fluid} />
+              <Link to={`/choreo/${work.node.titleUrl}`}>
+                <h3>{work.node.title}</h3>
+                <Img fluid={work.node.thumbnail.fluid} />
+              </Link>
               <h6>{work.node.director}</h6>
             </div>
           ))}

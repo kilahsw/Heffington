@@ -10,6 +10,7 @@ export default function Directing() {
         edges {
           node {
             title
+            titleUrl
             thumbnail {
               fluid(maxWidth: 900, quality: 100) {
                 ...GatsbyContentfulFluid
@@ -32,8 +33,10 @@ export default function Directing() {
         <div>
           {direct.map((work, index) => (
             <div key={index}>
-              <h3>{work.node.title}</h3>
-              <Img fluid={work.node.thumbnail.fluid} />
+              <Link to={`/directing/${work.node.titleUrl}`}>
+                <h3>{work.node.title}</h3>
+                <Img fluid={work.node.thumbnail.fluid} />
+              </Link>
             </div>
           ))}
         </div>
