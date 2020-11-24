@@ -6,11 +6,21 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const choreoVids = path.resolve('./src/templates/choreoVids.js')
+    const directingVids = path.resolve('./src/templates/directingVids.js')
     resolve(
       graphql(
         `
           {
             allContentfulChoreography {
+              edges {
+                node {
+                  title
+                  titleUrl
+                }
+              }
+            }
+
+            allContentfulDirecting {
               edges {
                 node {
                   title
@@ -26,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        result.data.allContentfulChoreography.edges.map(work => {
+        result.data.allContentfulChoreography.edges.map((work) => {
           createPage({
             path: `/choreo/${work.node.titleUrl}`,
             component: choreoVids,
@@ -35,6 +45,17 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        result.data.allContentfulDirecting.edges.map((work) => {
+          createPage({
+            path: `/directing/${work.node.titleUrl}`,
+            component: directingVids,
+            context: {
+              jobName: work.node.titleUrl,
+            },
+          })
+        })
+        
       })
     )
   })
