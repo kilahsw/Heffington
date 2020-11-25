@@ -16,7 +16,7 @@ export default function directingTemplate(props) {
 
   return (
     <Layout>
-      <Helmet title={`${title} | ${tabTitle}`} />
+      <Helmet title={`${tabTitle} | ${title}`} />
       <div className="dirheader" style={{ textAlign: 'center' }}>
         <h1>DIRECTING</h1>
       </div>

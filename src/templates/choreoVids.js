@@ -19,7 +19,7 @@ export default function choreoTemplate(props) {
   return (
     <Layout>
       <div>
-        <Helmet title={`${title} | ${tabTitle}`} />
+        <Helmet title={`${tabTitle} | ${title}`} />
         <div className="chorheader" style={{ textAlign: 'center' }}>
           <h1>CHOREOGRAPHY</h1>
         </div>
