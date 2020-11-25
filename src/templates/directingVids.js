@@ -8,7 +8,7 @@ export default function directingTemplate(props) {
   const object = props.data.allContentfulDirecting.edges[0]
 
   const title = object.node.title
-  const video = object.node.video.id //may need .id
+  // const video = object.node.video.id //may need .id
 
   console.log(props)
 
@@ -16,7 +16,13 @@ export default function directingTemplate(props) {
     <Layout>
       <Helmet title={`${title} | ${tabTitle}`} />
       <h1>{title}</h1>
-      <div>{video}</div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html:
+            props.data.allContentfulDirecting.edges[0].node.videoIFrame
+              .childMarkdownRemark.html,
+        }}
+      ></div>
     </Layout>
   )
 }
@@ -33,8 +39,13 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          video {
-            id
+          videoIFrame {
+            childMarkdownRemark {
+              html
+            }
+          }
+          videoDisplay {
+            json
           }
         }
       }

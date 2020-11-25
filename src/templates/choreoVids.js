@@ -10,7 +10,7 @@ export default function choreoTemplate(props) {
   const object = props.data.allContentfulChoreography.edges[0] //may need a [0]
 
   const title = object.node.title
-  const video = object.node.video.id
+  // const video = object.node.test.childMarkdownRemark.html
 
   console.log(props)
 
@@ -19,7 +19,13 @@ export default function choreoTemplate(props) {
       <div>
         <Helmet title={`${title} | ${tabTitle}`} />
         <h1>{title}</h1>
-        <div>{video}</div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              props.data.allContentfulChoreography.edges[0].node.videoIFrame
+                .childMarkdownRemark.html,
+          }}
+        ></div>
       </div>
     </Layout>
   )
@@ -37,74 +43,16 @@ export const pageQuery = graphql`
       edges {
         node {
           title
-          video {
-            id
+          videoIFrame {
+            childMarkdownRemark {
+              html
+            }
+          }
+          videoDisplay {
+            json
           }
         }
       }
     }
   }
 `
-
-// class BlogPostTemplate extends React.Component {
-//   render() {
-//     const post = get(this.props, 'data.contentfulBlogPost')
-//     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-
-//     return (
-//       <Layout location={this.props.location}>
-//         <div style={{ background: '#fff' }}>
-//           <Helmet title={`${post.title} | ${siteTitle}`} />
-//           <div className={heroStyles.hero}>
-//             <Img
-//               className={heroStyles.heroImage}
-//               alt={post.title}
-//               fluid={post.heroImage.fluid}
-//             />
-//           </div>
-//           <div className="wrapper">
-//             <h1 className="section-headline">{post.title}</h1>
-//             <p
-//               style={{
-//                 display: 'block',
-//               }}
-//             >
-//               {post.publishDate}
-//             </p>
-//             <div
-//               dangerouslySetInnerHTML={{
-//                 __html: post.body.childMarkdownRemark.html,
-//               }}
-//             />
-//           </div>
-//         </div>
-//       </Layout>
-//     )
-//   }
-// }
-
-// export default BlogPostTemplate
-
-// export const pageQuery = graphql`
-//   query BlogPostBySlug($slug: String!) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     contentfulBlogPost(slug: { eq: $slug }) {
-//       title
-//       publishDate(formatString: "MMMM Do, YYYY")
-//       heroImage {
-//         fluid(maxWidth: 1180, background: "rgb:000000") {
-//           ...GatsbyContentfulFluid_tracedSVG
-//         }
-//       }
-//       body {
-//         childMarkdownRemark {
-//           html
-//         }
-//       }
-//     }
-//   }
-// `

@@ -7,7 +7,6 @@ const contentfulConfig = {
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 }
 
-
 // if you want to use the preview API please define
 // CONTENTFUL_HOST in your environment config
 // the `host` property should map to `preview.contentful.com`
@@ -26,7 +25,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Ryan Heffington',
+    description: 'Ryan Heffington Website',
+    author: '@kilahmay',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -37,6 +38,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: 'gatsby-remark-embed-video',
+      options: {
+        width: 800,
+        ratio: 1.77,
+        height: 400,
+        related: false,
+        noIframeBorder: true,
+      },
     },
   ],
 }
