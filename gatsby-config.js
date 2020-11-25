@@ -25,7 +25,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Ryan Heffington',
+    title: 'RYAN HEFFINGTON',
     description: 'Ryan Heffington Website',
     author: '@kilahmay',
   },
