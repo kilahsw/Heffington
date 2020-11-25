@@ -27,18 +27,29 @@ export default function Choreo() {
 
   //array
   const choreo = data.allContentfulChoreography.edges
+  const home = 'HOME'
+  const direct = 'DIRECTING'
 
   return (
     <div>
       <Layout>
+        <div className="chorheader" style={{ textAlign: 'center' }}>
+          <h1>CHOREOGRAPHY</h1>
+        </div>
+        <br />
         <div>
           {choreo.map((work, index) => (
             <div key={index}>
               <Link to={`/choreo/${work.node.titleUrl}`}>
-                <h3>{work.node.title}</h3>
+                <h3 style={{ textAlign: 'center' }}>{work.node.title}</h3>
                 <Img fluid={work.node.thumbnail.fluid} />
               </Link>
-              <h6>{work.node.director}</h6>
+              <h4 style={{ textAlign: 'right' }}>{work.node.director}</h4>
+              <div>
+                <Link to={`/`}>{home}</Link> |{' '}
+                <Link to={`/directing/`}>{direct}</Link>
+              </div>
+              <br />
             </div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 // import get from 'lodash/get'
 import Img from 'gatsby-image'
@@ -10,6 +10,8 @@ export default function choreoTemplate(props) {
   const object = props.data.allContentfulChoreography.edges[0] //may need a [0]
 
   const title = object.node.title
+  const home = 'HOME'
+  const back = 'BACK'
   // const video = object.node.test.childMarkdownRemark.html
 
   console.log(props)
@@ -18,7 +20,13 @@ export default function choreoTemplate(props) {
     <Layout>
       <div>
         <Helmet title={`${title} | ${tabTitle}`} />
-        <h1>{title}</h1>
+        <div className="chorheader" style={{ textAlign: 'center' }}>
+          <h1>CHOREOGRAPHY</h1>
+        </div>
+        <br />
+        <div>
+          <h1 style={{ textAlign: 'center' }}>{title}</h1>
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html:
@@ -26,6 +34,10 @@ export default function choreoTemplate(props) {
                 .childMarkdownRemark.html,
           }}
         ></div>
+        <br/>
+        <div>
+          <Link to={`/`}>{home}</Link> | <Link to={`/choreo`}>{back}</Link>
+        </div>
       </div>
     </Layout>
   )

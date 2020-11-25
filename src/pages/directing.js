@@ -26,17 +26,28 @@ export default function Directing() {
 
   //array
   const direct = data.allContentfulDirecting.edges
+  const home = 'HOME'
+  const choreo = 'CHOREOGRAPHY'
 
   return (
     <div>
       <Layout>
         <div>
+          <div className="dirheader" style={{ textAlign: 'center' }}>
+            <h1>DIRECTING</h1>
+            <br />
+          </div>
           {direct.map((work, index) => (
             <div key={index}>
               <Link to={`/directing/${work.node.titleUrl}`}>
-                <h3>{work.node.title}</h3>
+                <h3 style={{ textAlign: 'center' }}>{work.node.title}</h3>
                 <Img fluid={work.node.thumbnail.fluid} />
               </Link>
+              <br />
+              <div>
+                <Link to={`/`}>{home}</Link> |{' '}
+                <Link to={`/choreo/`}>{choreo}</Link>
+              </div>
             </div>
           ))}
         </div>

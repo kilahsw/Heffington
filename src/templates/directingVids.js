@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 
@@ -8,6 +8,8 @@ export default function directingTemplate(props) {
   const object = props.data.allContentfulDirecting.edges[0]
 
   const title = object.node.title
+  const home = 'HOME'
+  const back = 'BACK'
   // const video = object.node.video.id //may need .id
 
   console.log(props)
@@ -15,7 +17,13 @@ export default function directingTemplate(props) {
   return (
     <Layout>
       <Helmet title={`${title} | ${tabTitle}`} />
-      <h1>{title}</h1>
+      <div className="dirheader" style={{ textAlign: 'center' }}>
+        <h1>DIRECTING</h1>
+      </div>
+      <br />
+      <div>
+        <h2 style={{ textAlign: 'center' }}>{title}</h2>
+      </div>
       <div
         dangerouslySetInnerHTML={{
           __html:
@@ -23,6 +31,10 @@ export default function directingTemplate(props) {
               .childMarkdownRemark.html,
         }}
       ></div>
+      <br />
+      <div>
+        <Link to={`/`}>{home}</Link> | <Link to={`/directing`}>{back}</Link>
+      </div>
     </Layout>
   )
 }

@@ -1,9 +1,11 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+
+import './index.css'
 
 export default function RootIndex() {
   const data = useStaticQuery(graphql`
@@ -33,7 +35,38 @@ export default function RootIndex() {
         <div>
           <h1>{title}</h1>
           <h2>{subtitle}</h2>
+        </div>
+        <div>
           <Img fluid={img.fluid} />
+        </div>
+        <div>
+          <Link to={`/about/`}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              ABOUT
+            </h5>
+          </Link>
+          <Link to={`/choreo/`}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              CHOREOGRAPHY
+            </h5>
+          </Link>
+          <Link to={`/directing/`}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              DIRECTING
+            </h5>
+          </Link>
         </div>
       </Layout>
     </div>

@@ -3,6 +3,8 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
+import './about.css'
+
 export default function About() {
   const data = useStaticQuery(graphql`
     {
@@ -32,7 +34,20 @@ export default function About() {
     <div>
       <Layout>
         <div>
+          <Link to={`/choreo/`}>
+            <h3>CHOREOGRAPHY</h3>
+          </Link>
+          <Link to={`/directing/`}>
+            <h3>DIRECTING</h3>
+          </Link>
+          <Link to={`/`}>
+            <h3>HOME</h3>
+          </Link>
+        </div>
+        <div>
           <Img fluid={img.fluid} />
+        </div>
+        <div>
           <p>{bio}</p>
         </div>
       </Layout>
