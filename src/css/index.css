@@ -1,0 +1,17 @@
+.hero {
+    width: 100%;
+    height: 100vh; /*vertical height*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.name {
+    color: white;
+    text-align: center;
+}
+
+.description {
+    color: white;
+    text-align: center;
+}

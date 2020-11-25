@@ -3,9 +3,10 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import Layout from '../components/layout'
 
-import './index.css'
+import '../css/index.css'
 
 export default function RootIndex() {
   const data = useStaticQuery(graphql`
@@ -32,42 +33,44 @@ export default function RootIndex() {
   return (
     <div>
       <Layout>
-        <div>
-          <h1>{title}</h1>
-          <h2>{subtitle}</h2>
-        </div>
-        <div>
-          <Img fluid={img.fluid} />
-        </div>
-        <div>
-          <Link to={`/about/`}>
-            <h5
-              css={`
-                display: inline-block;
-              `}
-            >
-              ABOUT
-            </h5>
-          </Link>
-          <Link to={`/choreo/`}>
-            <h5
-              css={`
-                display: inline-block;
-              `}
-            >
-              CHOREOGRAPHY
-            </h5>
-          </Link>
-          <Link to={`/directing/`}>
-            <h5
-              css={`
-                display: inline-block;
-              `}
-            >
-              DIRECTING
-            </h5>
-          </Link>
-        </div>
+        {/* <div className="name">
+          <div className="ryan">{title}</div>
+          <div className="artist">{subtitle}</div>
+        </div> */}
+        <BackgroundImage className="hero" fluid={img.fluid}>
+          <h1 className="name">{title}</h1>
+          <h2 className="description">{subtitle}</h2>
+          <div className="nav">
+            <Link to={`/about/`}>
+              <h5
+                css={`
+                  display: inline-block;
+                `}
+              >
+                ABOUT
+              </h5>
+            </Link>
+            <Link to={`/choreo/`}>
+              <h5
+                css={`
+                  display: inline-block;
+                `}
+              >
+                CHOREOGRAPHY
+              </h5>
+            </Link>
+            <Link to={`/directing/`}>
+              <h5
+                css={`
+                  display: inline-block;
+                `}
+              >
+                DIRECTING
+              </h5>
+            </Link>
+          </div>
+        </BackgroundImage>
+        {/* <Img fluid={img.fluid}/> */}
       </Layout>
     </div>
   )
