@@ -29,7 +29,7 @@
   display: flex;
   align-content: flex-end;
   justify-content: space-around;
-  margin-top: 475px;
+  margin-top: 490px;
   font-family: 'Source Sans Pro';
   font-weight: 600;
   
@@ -37,6 +37,31 @@
 
 h5 {
   color: black;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bolder;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .name {
+        font-size: 52px;
+    }
+
+    .description {
+        font-size: 30px;
+    }
+
+    .hero {
+        width: 100%;
+        height: 875px;
+    }
+    
+    .nav {
+        margin-top: 655px;
+    }
+
+    h5 {
+        font-size: 25px;
+        
+    }
 }
