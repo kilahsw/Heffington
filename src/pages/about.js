@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import Layout from '../components/layout'
 
 import '../css/about.css'
@@ -17,6 +18,9 @@ export default function About() {
               }
               id
             }
+            bioQuote {
+              bioQuote
+            }
             body {
               body
             }
@@ -28,28 +32,51 @@ export default function About() {
   console.log(data)
 
   const img = data.allContentfulBio.edges[0].node.image
+  const bioquote = data.allContentfulBio.edges[0].node.bioQuote.bioQuote
   const bio = data.allContentfulBio.edges[0].node.body.body
 
   return (
-    <div>
+    <div className="about">
       <Layout>
-        <div>
-          <Link to={`/choreo/`}>
-            <h3>CHOREOGRAPHY</h3>
+        <div className="aboutnav">
+          <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
+            <h3
+              className="bionav"
+              css={`
+                display: inline-block;
+              `}
+            >
+              CHOREOGRAPHY
+            </h3>
           </Link>
-          <Link to={`/directing/`}>
-            <h3>DIRECTING</h3>
+          <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
+            <h3
+              className="bionav"
+              css={`
+                display: inline-block;
+              `}
+            >
+              DIRECTING
+            </h3>
           </Link>
-          <Link to={`/`}>
-            <h3>HOME</h3>
+          <Link to={`/`} style={{ textDecoration: 'none' }}>
+            <h3
+              className="bionav"
+              css={`
+                display: inline-block;
+              `}
+            >
+              HOME
+            </h3>
           </Link>
         </div>
-        <div>
-          <Img fluid={img.fluid} />
-        </div>
-        <div>
-          <p>{bio}</p>
-        </div>
+        <BackgroundImage className="biopic" fluid={img.fluid}>
+          <div>
+              <p className="quote">{bioquote}</p>
+              <p className="bio">{bio}</p>
+          </div>
+        </BackgroundImage>
+        <div className='bottom'></div>
       </Layout>
     </div>
   )

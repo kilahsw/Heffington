@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+
+.about {
+  background-color: black;
+}
+.bottom {
+  background-color: black;
+}
+
+.biopic {
+  width: 100%;
+  height: 50vh;
+  background-size: contain;
+}
+
+.quote {
+  display: inline-block;
+  font-family: 'lato', sans-serif;
+}
+
+.bio {
+  display: inline-block;
+  font-family: 'lato', sans-serif;
+  font-size: 12px;
+}
+.aboutnav {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  margin-right: 15px;
+}
+
+h3.bionav {
+  color: #e9ecef;
+  margin-bottom: -10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .biopic {
+  }
+}

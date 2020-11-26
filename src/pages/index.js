@@ -11,11 +11,9 @@ import '../css/index.css'
 export function ScreenSize() {
   const [screenSize, setScreenSize] = useState({
     width: 1024,
-    height: 768
-  });
-  screenSize = () => {
-    
-  }
+    height: 768,
+  })
+  screenSize = () => {}
 }
 
 export default function RootIndex() {
@@ -82,7 +80,6 @@ export default function RootIndex() {
             </Link>
           </div>
         </BackgroundImage>
-        {/* <Img fluid={img.fluid}/> */}
       </Layout>
     </div>
   )
