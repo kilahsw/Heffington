@@ -41,7 +41,7 @@ export default function RootIndex() {
           <h1 className="name">{title}</h1>
           <h2 className="description">{subtitle}</h2>
           <div className="nav">
-            <Link to={`/about/`}>
+            <Link to={`/about/`} style={{ textDecoration: 'none' }}>
               <h5
                 css={`
                   display: inline-block;
@@ -50,7 +50,7 @@ export default function RootIndex() {
                 ABOUT
               </h5>
             </Link>
-            <Link to={`/choreo/`}>
+            <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
               <h5
                 css={`
                   display: inline-block;
@@ -59,7 +59,7 @@ export default function RootIndex() {
                 CHOREOGRAPHY
               </h5>
             </Link>
-            <Link to={`/directing/`}>
+            <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
               <h5
                 css={`
                   display: inline-block;
