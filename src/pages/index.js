@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
@@ -7,6 +7,16 @@ import BackgroundImage from 'gatsby-background-image'
 import Layout from '../components/layout'
 
 import '../css/index.css'
+
+export function ScreenSize() {
+  const [screenSize, setScreenSize] = useState({
+    width: 1024,
+    height: 768
+  });
+  screenSize = () => {
+    
+  }
+}
 
 export default function RootIndex() {
   const data = useStaticQuery(graphql`
@@ -21,6 +31,11 @@ export default function RootIndex() {
                 ...GatsbyContentfulFluid
               }
             }
+            imageDesk {
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
@@ -28,15 +43,12 @@ export default function RootIndex() {
   `)
   console.log(data)
   const img = data.allContentfulPerson.edges[0].node.image
+  const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
   return (
     <div>
       <Layout>
-        {/* <div className="name">
-          <div className="ryan">{title}</div>
-          <div className="artist">{subtitle}</div>
-        </div> */}
         <BackgroundImage className="hero" fluid={img.fluid}>
           <h1 className="name">{title}</h1>
           <h2 className="description">{subtitle}</h2>
