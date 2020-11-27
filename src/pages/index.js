@@ -8,13 +8,13 @@ import Layout from '../components/layout'
 
 import '../css/index.css'
 
-export function ScreenSize() {
-  const [screenSize, setScreenSize] = useState({
-    width: 1024,
-    height: 768,
-  })
-  screenSize = () => {}
-}
+// export function ScreenSize() {
+//   const [screenSize, setScreenSize] = useState({
+//     width: 1024,
+//     height: 768,
+//   })
+//   screenSize = () => {}
+// }
 
 export default function RootIndex() {
   const data = useStaticQuery(graphql`
@@ -40,14 +40,22 @@ export default function RootIndex() {
     }
   `)
   console.log(data)
+
   const img = data.allContentfulPerson.edges[0].node.image
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
+  const changePic = window.innerWidth
   return (
     <div>
       <Layout>
-        <BackgroundImage className="hero" fluid={img.fluid}>
+        <BackgroundImage
+          className="hero"
+          fluid={img.fluid}
+          // {...(changePic <= 800
+          //   ? data.allContentfulPerson.edges[0].node.image
+          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
+        >
           <h1 className="name">{title}</h1>
           <h2 className="description">{subtitle}</h2>
           <div className="nav">
@@ -80,6 +88,7 @@ export default function RootIndex() {
             </Link>
           </div>
         </BackgroundImage>
+        <BackgroundImage></BackgroundImage>
       </Layout>
     </div>
   )

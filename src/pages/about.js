@@ -2,9 +2,12 @@ import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
+import Container from '../components/containerBio'
+import ContainerQ from '../components/containerQuote'
 import Layout from '../components/layout'
 
 import '../css/about.css'
+
 
 export default function About() {
   const data = useStaticQuery(graphql`
@@ -22,7 +25,9 @@ export default function About() {
               bioQuote
             }
             body {
-              body
+              childMarkdownRemark {
+                html
+              }
             }
           }
         }
@@ -33,7 +38,7 @@ export default function About() {
 
   const img = data.allContentfulBio.edges[0].node.image
   const bioquote = data.allContentfulBio.edges[0].node.bioQuote.bioQuote
-  const bio = data.allContentfulBio.edges[0].node.body.body
+  const bio = data.allContentfulBio.edges[0].node.body.childMarkdownRemark.html
 
   return (
     <div className="about">
@@ -71,12 +76,15 @@ export default function About() {
           </Link>
         </div>
         <BackgroundImage className="biopic" fluid={img.fluid}>
-          <div>
-              <p className="quote">{bioquote}</p>
-              <p className="bio">{bio}</p>
-          </div>
+          <ContainerQ>
+            <p className='quote'>{bioquote}</p>
+          </ContainerQ>
         </BackgroundImage>
-        <div className='bottom'></div>
+        <Container>
+          <div className="bottom">
+            <p className="bio" dangerouslySetInnerHTML={{ __html: bio }} />
+          </div>
+        </Container>
       </Layout>
     </div>
   )

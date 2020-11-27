@@ -16,12 +16,19 @@
 .quote {
   display: inline-block;
   font-family: 'lato', sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  color: black;
 }
 
 .bio {
   display: inline-block;
   font-family: 'lato', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #e9ecef;
+  margin-bottom: 100px;
+  margin-top: -70px;
 }
 .aboutnav {
   display: flex;
@@ -29,7 +36,7 @@
   text-align: right;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
-  font-size: 12px;
+  font-size: 16px;
   margin-right: 15px;
 }
 
