@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
@@ -32,6 +32,17 @@ export default function RootIndex() {
     }
   `)
   console.log(data)
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      const Isotope = require('isotope-layout/js/isotope')
+
+      this.grid = new Isotope(`.${isotopeStyles.grid}`, {
+        itemSelector: `.${isotopeStyles.elementItem}`,
+        layoutMode: 'fitRows',
+      })
+    }
+  })
 
   const img = data.allContentfulPerson.edges[0].node.image
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
