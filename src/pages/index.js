@@ -37,7 +37,7 @@ export default function RootIndex() {
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
-  const changePic = window.innerWidth
+  // const changePic = window.innerWidth
 
   // const [changePic, setChangePic] = useState({
   //   width: 0,
@@ -59,7 +59,7 @@ export default function RootIndex() {
         <BackgroundImage
           className="hero"
           fluid={img.fluid}
-          {...(typeof window !== 'undefined'
+          {...(typeof window !== 'undefined' && window.innerWidth
             ? window.innerWidth < 1024
               ? data.allContentfulPerson.edges[0].node.image
               : data.allContentfulPerson.edges[0].node.imageDesk
