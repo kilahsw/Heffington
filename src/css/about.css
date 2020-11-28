@@ -50,7 +50,8 @@ h3.bionav {
   .aboutnav {
     padding-top: 2%;
     padding-right: 3%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
+    font-size: 18px;
   }
 
   .biopic {
@@ -62,7 +63,6 @@ h3.bionav {
   }
 
   .bio {
-    padding-top: 10%;
     font-size: 18px;
     margin-bottom: 50%;
   }
@@ -73,21 +73,57 @@ h3.bionav {
   
   .aboutnav {
     padding-right: 10%;
-    font-size: 20px;
-    padding-bottom: 5%;
+    font-size: 25px;
+    padding-bottom: 2%;
   }
 
   .biopic {
     height: 100vh;
+    
   }
 
   .quote {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.4;
   }
   
   .bio {
-    font-size: 20px;
+    padding-top: 0%;
+    font-size: 22px;
     font-weight: bold;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+
+  .biopic {
+    height: 125vh;
+  }
+
+  .aboutnav {
+    font-size: 30px;
+  }
+
+  .quote {
+    font-size: 25px;
+  }
+
+  .bio {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+
+  .aboutnav {
+    font-size: 45px;
+  }
+
+  .quote {
+    font-size: 40px;
+  }
+
+  .bio {
+    font-size: 45px;
   }
 }
