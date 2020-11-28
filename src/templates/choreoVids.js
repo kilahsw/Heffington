@@ -10,6 +10,7 @@ export default function choreoTemplate(props) {
   const object = props.data.allContentfulChoreography.edges[0] //may need a [0]
 
   const title = object.node.title
+  const director = object.node.director
   const home = 'HOME'
   const back = 'BACK'
   // const video = object.node.test.childMarkdownRemark.html
@@ -34,7 +35,11 @@ export default function choreoTemplate(props) {
                 .childMarkdownRemark.html,
           }}
         ></div>
-        <br/>
+        <br />
+        <div>
+          <p>{director}</p>
+        </div>
+        <br />
         <div>
           <Link to={`/`}>{home}</Link> | <Link to={`/choreo`}>{back}</Link>
         </div>
@@ -63,6 +68,7 @@ export const pageQuery = graphql`
           videoDisplay {
             json
           }
+          director
         }
       }
     }

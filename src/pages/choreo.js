@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import ContainerI from '../components/containerImg'
 import Layout from '../components/layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../css/choreo.css'
 
 export default function Choreo() {
   const data = useStaticQuery(graphql`
@@ -39,7 +40,7 @@ export default function Choreo() {
           <h6>CHOREOGRAPHY</h6>
         </div>
         <br />
-        <div>
+        <div id='choreo'>
           {choreo.map((work, index) => (
             <ContainerI>
               <div key={index}>
@@ -48,7 +49,7 @@ export default function Choreo() {
                   <Img
                     fluid={work.node.thumbnail.fluid}
                     alt="pictures of choreo work"
-                    className="rounded"
+                    className="rounded-lg"
                   />
                 </Link>
                 <p style={{ textAlign: 'center' }}>{work.node.director}</p>
