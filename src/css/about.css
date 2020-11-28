@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
 
 .about {
   background-color: black;
@@ -16,7 +16,7 @@
 .quote {
   display: inline-block;
   font-family: 'lato', sans-serif;
-  font-size: 12px;
+  font-size: 70%;
   font-weight: bolder;
   color: black;
 }
@@ -27,7 +27,7 @@
   font-size: 16px;
   line-height: 1.2;
   color: #e9ecef;
-  margin-bottom: 100px;
+  margin-bottom: 100%;
   margin-top: -70px;
 }
 .aboutnav {
@@ -46,6 +46,48 @@ h3.bionav {
 }
 
 @media only screen and (min-width: 768px) {
+  
+  .aboutnav {
+    padding-top: 2%;
+    padding-right: 3%;
+    padding-bottom: 10%;
+  }
+
   .biopic {
+    height: 75vh;
+  }
+
+  .quote {
+    font-size: 17px;
+  }
+
+  .bio {
+    padding-top: 10%;
+    font-size: 18px;
+    margin-bottom: 50%;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  .aboutnav {
+    padding-right: 10%;
+    font-size: 20px;
+    padding-bottom: 5%;
+  }
+
+  .biopic {
+    height: 100vh;
+  }
+
+  .quote {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  
+  .bio {
+    font-size: 20px;
+    font-weight: bold;
   }
 }

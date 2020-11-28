@@ -1,39 +1,32 @@
 .containerQ {
-  margin-left: 150px;
-  padding-top: 45px;
-  max-width: 50%;
-  font-weight: bold;
+  margin-left: 50%;
+  padding-top: 20%;
+  max-width: 45%;
 }
 
 @media only screen and (min-width: 375px) {
    .containerQ {
-       margin-left: 170px;
-   }
-}
-
-@media only screen and (min-width: 425px) {
-   .containerQ {
-       margin-left: 200px;
+       padding-top: 15%;
+       max-width: 40%;
    }
 }
 
 @media only screen and (min-width: 768px) {
    .containerQ {
-       margin-left: 380px;
-       max-width: 30%;
+       padding-top: 8%;
+       max-width: 35%;
    }
 }
 
 @media only screen and (min-width: 1024px) {
    .containerQ {
-       margin-left: 500px;
-       max-width: 25%;
+       padding-top: 10%;
+       max-width: 40%;
    }
 }
 
 @media only screen and (min-width: 1440px) {
    .containerQ {
-       margin-left: 725px;
        max-width: 15%;
    }
 }

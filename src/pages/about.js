@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 import Container from '../components/containerBio'
 import ContainerQ from '../components/containerQuote'
+import ContainerBp from '../components/containerBioPic'
 import Layout from '../components/layout'
 
 import '../css/about.css'
@@ -76,8 +77,9 @@ export default function About() {
           </Link>
         </div>
         <BackgroundImage className="biopic" fluid={img.fluid}>
+          
           <ContainerQ>
-            <p className='quote'>{bioquote}</p>
+            <p className="quote">{bioquote}</p>
           </ContainerQ>
         </BackgroundImage>
         <Container>

@@ -45,17 +45,11 @@ export default function RootIndex() {
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
-  const changePic = window.innerWidth
+  // const changePic = window.innerWidth
   return (
     <div>
       <Layout>
-        <BackgroundImage
-          className="hero"
-          fluid={img.fluid}
-          // {...(changePic <= 800
-          //   ? data.allContentfulPerson.edges[0].node.image
-          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
-        >
+        <BackgroundImage className="hero" fluid={img.fluid}>
           <h1 className="name">{title}</h1>
           <h2 className="description">{subtitle}</h2>
           <div className="nav">
@@ -88,8 +82,11 @@ export default function RootIndex() {
             </Link>
           </div>
         </BackgroundImage>
-        <BackgroundImage></BackgroundImage>
       </Layout>
     </div>
   )
 }
+
+//// {...(changePic <= 800
+//   ? data.allContentfulPerson.edges[0].node.image
+//   : data.allContentfulPerson.edges[0].node.imageDesk)}
