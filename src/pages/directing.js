@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Directing() {
   const data = useStaticQuery(graphql`
@@ -41,7 +42,11 @@ export default function Directing() {
             <div key={index}>
               <Link to={`/directing/${work.node.titleUrl}`}>
                 <h3 style={{ textAlign: 'center' }}>{work.node.title}</h3>
-                <Img fluid={work.node.thumbnail.fluid} />
+                <Img
+                  fluid={work.node.thumbnail.fluid}
+                  alt="pictures of directing work"
+                  className="rounded"
+                />
               </Link>
               <br />
               <div>
