@@ -33,32 +33,37 @@ export default function RootIndex() {
   `)
   console.log(data)
 
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      const Isotope = require('isotope-layout/js/isotope')
-
-      this.grid = new Isotope(`.${isotopeStyles.grid}`, {
-        itemSelector: `.${isotopeStyles.elementItem}`,
-        layoutMode: 'fitRows',
-      })
-    }
-  })
-
   const img = data.allContentfulPerson.edges[0].node.image
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
   const changePic = window.innerWidth
 
+  // const [changePic, setChangePic] = useState({
+  //   width: 0,
+  // })
+
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setChangePic({
+  //       width: window.innerwidth
+  //     })
+  //   }
+  //   window.addEventListener("change", handleResize)
+  //   handleResize()
+  // }, [])
+
+
   return (
     <div>
       <Layout>
         <BackgroundImage
           className="hero"
-          // fluid={img.fluid}
-          {...(changePic < 1024
-            ? data.allContentfulPerson.edges[0].node.image
-            : data.allContentfulPerson.edges[0].node.imageDesk)}
+          fluid={img.fluid}
+          {...window.innerWidth < 1024 ? data.allContentfulPerson.edges[0].node.image : data.allContentfulPerson.edges[0].node.imageDesk }
+          // {...(changePic < 1024
+          //   ? data.allContentfulPerson.edges[0].node.image
+          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
         >
           <h1 className="name">{title}</h1>
           <h2 className="description">{subtitle}</h2>
