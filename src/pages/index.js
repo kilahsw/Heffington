@@ -53,14 +53,17 @@ export default function RootIndex() {
   //   handleResize()
   // }, [])
 
-
   return (
     <div>
       <Layout>
         <BackgroundImage
           className="hero"
           fluid={img.fluid}
-          {...window.innerWidth < 1024 ? data.allContentfulPerson.edges[0].node.image : data.allContentfulPerson.edges[0].node.imageDesk }
+          {...(typeof window !== 'undefined'
+            ? window.innerWidth < 1024
+              ? data.allContentfulPerson.edges[0].node.image
+              : data.allContentfulPerson.edges[0].node.imageDesk
+            : null)}
           // {...(changePic < 1024
           //   ? data.allContentfulPerson.edges[0].node.image
           //   : data.allContentfulPerson.edges[0].node.imageDesk)}
