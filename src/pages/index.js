@@ -37,22 +37,7 @@ export default function RootIndex() {
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
-  // const changePic = window.innerWidth
-
-  // const [changePic, setChangePic] = useState({
-  //   width: 0,
-  // })
-
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setChangePic({
-  //       width: window.innerwidth
-  //     })
-  //   }
-  //   window.addEventListener("change", handleResize)
-  //   handleResize()
-  // }, [])
-
+  
   return (
     <div>
       <Layout>
@@ -64,11 +49,9 @@ export default function RootIndex() {
               ? data.allContentfulPerson.edges[0].node.image
               : data.allContentfulPerson.edges[0].node.imageDesk
             : null)}
-          // {...(changePic < 1024
-          //   ? data.allContentfulPerson.edges[0].node.image
-          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
         >
           <h1 className="name">{title}</h1>
+          <br />
           <h2 className="description">{subtitle}</h2>
           <div className="nav">
             <Link to={`/about/`} style={{ textDecoration: 'none' }}>
@@ -104,3 +87,27 @@ export default function RootIndex() {
     </div>
   )
 }
+
+
+//original ternary for window pic change - i feel like this could work if i could figure out wher to put the window !== 'undefined' statement. It would have to come before the const was declared...
+
+// const changePic = window.innerWidth
+// {...(changePic < 1024
+          //   ? data.allContentfulPerson.edges[0].node.image
+          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
+
+//failed useEffect and useState
+
+// const [changePic, setChangePic] = useState({
+  //   width: 0,
+  // })
+
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setChangePic({
+  //       width: window.innerwidth
+  //     })
+  //   }
+  //   window.addEventListener("change", handleResize)
+  //   handleResize()
+  // }, [])
