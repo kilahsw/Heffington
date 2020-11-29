@@ -14,12 +14,6 @@ export default function About() {
       allContentfulBio {
         edges {
           node {
-            agencyPic {
-              fluid(maxWidth: 200, quality: 100) {
-                ...GatsbyContentfulFluid
-              }
-              id
-            }
             image {
               fluid(maxWidth: 900, quality: 100) {
                 ...GatsbyContentfulFluid
