@@ -7,9 +7,9 @@
 
 .name {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 35px;
-  color: #e9ecef;
+  color: #e4e7eb;
   text-align: center;
   padding-top: 20px;
   margin-bottom: -25px;
@@ -17,80 +17,64 @@
 
 .description {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 20px;
-  color: #e9ecef;
+  color: #e4e7eb;
   text-align: center;
 }
 
 .nav {
   display: inline-block;
-  margin-top: 110%;
-  margin-left: 4%;
+  position: absolute;
+  bottom: 17.5%;
+  left: 2%;
   font-family: 'Source Sans Pro';
-  font-weight: 600;
 }
 
 h5 {
   color: #dee2e6;
-  font-size: 17px;
-  font-weight: bolder;
+  font-size: 3vh;
+  font-weight: 600;
   line-height: 1.6;
 }
 
 @media only screen and (min-width: 375px) {
   .name {
-    font-size: 40px;
+    font-size: 6vh;
   }
 
   .description {
-    font-size: 25px;
-  }
-
-  .nav {
-    margin-top: 91%;
-    margin-left: 3%;
+    font-size: 3.5vh;
   }
 
   h5 {
-    font-size: 19px;
-  }
-}
-
-@media only screen and (min-width: 425px) {
-  .nav {
-    margin-top: 80%;
+    font-size: 3vh;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .name {
-    font-size: 65px;
-  }
-
-  .description {
-    font-size: 35px;
-  }
-
   .hero {
     width: 100%;
     height: 140vh;
   }
 
-  .nav {
-    display: inline-block;
-    margin-top: 62%;
-    margin-left: 2%;
+  .name {
+    font-size: 9vh;
+  }
+
+  .description {
+    font-size: 5vh;
   }
 
   h5 {
-    font-size: 22px;
+    font-size: 4vh;
     font-weight: 300;
-    margin: 15px;
     font-weight: bold;
     line-height: 1.7;
   }
 }
+
+/* PICTURE CHANGES AT 1024PX (refresh page if in dev tools), NEW SET OF CONDITIONS BEGIN */
 
 @media only screen and (min-width: 1024px) {
   .hero {
@@ -101,22 +85,62 @@ h5 {
   .name {
     color: black;
     font-weight: 600;
-    margin-left: 40%;
+    font-size: 10vh;
+    position: absolute;
+    top: 0%;
+    right: 3%;
   }
 
   .description {
     color: black;
     font-weight: 400;
-    margin-left: 40%;
+    position: absolute;
+    top: 12%;
+    right: 3%;
   }
 
   .nav {
-    margin-top: 28%;
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
   }
 
   h5 {
     color: black;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 4vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    height: 115vh;
+  }
+
+  .name {
+    font-size: 11vh;
+  }
+
+  .description {
+    font-size: 6vh;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .hero {
+    height: 115vh;
+  }
+
+  .name {
+    font-size: 11vh;
+    font-size: 7vw;
+  }
+
+  .description {
+    font-size: 6vh;
+  }
+
+  h5 {
+    font-size: 6vh;
   }
 }
