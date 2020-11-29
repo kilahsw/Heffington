@@ -9,13 +9,18 @@ import Layout from '../components/layout'
 
 import '../css/about.css'
 
-
 export default function About() {
   const data = useStaticQuery(graphql`
     {
       allContentfulBio {
         edges {
           node {
+            agencyPic {
+              fluid(maxWidth: 200, quality: 100) {
+                ...GatsbyContentfulFluid
+              }
+              id
+            }
             image {
               fluid(maxWidth: 900, quality: 100) {
                 ...GatsbyContentfulFluid
@@ -36,7 +41,7 @@ export default function About() {
     }
   `)
   console.log(data)
-
+  const agency = data.allContentfulBio.edges[0].node.agencyPic
   const img = data.allContentfulBio.edges[0].node.image
   const bioquote = data.allContentfulBio.edges[0].node.bioQuote.bioQuote
   const bio = data.allContentfulBio.edges[0].node.body.childMarkdownRemark.html
@@ -46,38 +51,33 @@ export default function About() {
       <Layout>
         <div className="aboutnav">
           <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
-            <h3
+            <h6
               className="bionav"
-              css={`
-                display: inline-block;
-              `}
             >
               CHOREOGRAPHY
-            </h3>
+            </h6>
           </Link>
           <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
-            <h3
+            <h6
               className="bionav"
-              css={`
-                display: inline-block;
-              `}
             >
               DIRECTING
-            </h3>
+            </h6>
           </Link>
           <Link to={`/`} style={{ textDecoration: 'none' }}>
-            <h3
+            <h6
               className="bionav"
-              css={`
-                display: inline-block;
-              `}
             >
               HOME
-            </h3>
+            </h6>
           </Link>
         </div>
         <BackgroundImage className="biopic" fluid={img.fluid}>
-          
+          {/* <Img
+            fluid={agency.fluid}
+            alt="picture of CAA logo"
+            className="agency"
+          /> */}
           <ContainerQ>
             <p className="quote">{bioquote}</p>
           </ContainerQ>

@@ -14,116 +14,150 @@
 }
 
 .quote {
-  display: inline-block;
   font-family: 'lato', sans-serif;
-  font-size: 70%;
-  font-weight: bolder;
+  display: block;
+  font-size: 2vh;
+  font-weight: 600;
+  position: absolute;
+  top: 19%;
+  margin-right: 5%;
   color: black;
 }
 
-.bio {
-  display: inline-block;
-  font-family: 'lato', sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
-  color: #e9ecef;
-  margin-bottom: 100%;
-  margin-top: -70px;
-}
 .aboutnav {
   display: flex;
   flex-direction: column;
   text-align: right;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 200;
-  font-size: 16px;
-  margin-right: 15px;
+  position: relative;
+  right: 5%;
+  color: #dee2e6;
+  font-size: 4.5vh;
+  padding-top: 4%;
+  margin-bottom: -5%;
 }
 
-h3.bionav {
-  color: #e9ecef;
-  margin-bottom: -10px;
+h6.bionav {
+  color: #dee2e6;
+  font-size: 4vh;
+  line-height: 1.5;
 }
 
-@media only screen and (min-width: 768px) {
-  
-  .aboutnav {
-    padding-top: 2%;
-    padding-right: 3%;
-    padding-bottom: 5%;
-    font-size: 18px;
-  }
+.bio {
+  display: inline-block;
+  font-family: 'lato', sans-serif;
+  font-size: 3vh;
+  line-height: 1.2;
+  color: #dee2e6;
+  position: relative;
+  margin-top: -20%;
+  margin-bottom: 75%;
+}
 
-  .biopic {
-    height: 75vh;
-  }
-
+@media only screen and (min-width: 375px) {
   .quote {
-    font-size: 17px;
+    font-size: 2.1vh;
   }
 
   .bio {
-    font-size: 18px;
-    margin-bottom: 50%;
+    margin-top: -14%;
   }
-
 }
 
-@media only screen and (min-width: 1024px) {
-  
+@media only screen and (min-width: 425px) {
+  .quote {
+    font-size: 2.3vh;
+  }
   .aboutnav {
-    padding-right: 10%;
-    font-size: 25px;
-    padding-bottom: 2%;
+    margin-bottom: 2%;
+  }
+
+  .bio {
+    margin-top: -10%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h6.bionav {
+    font-size: 4.5vh;
   }
 
   .biopic {
     height: 100vh;
-    
+    margin-top: -10%;
   }
 
   .quote {
-    font-size: 22px;
+    font-size: 3.7vh;
+  }
+
+  .bio {
+    font-size: 4vh;
+    margin-top: -18%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .aboutnav {
+    right: 7%;
+  }
+
+  h6.bionav {
+    font-size: 5vh;
+  }
+
+  .biopic {
+    height: 130vh;
+  }
+
+  .quote {
+    margin-right: 10%;
+    font-size: 4vh;
     line-height: 1.4;
   }
-  
+
   .bio {
-    padding-top: 0%;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 4vh;
+    margin-top: -18%;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-
-  .biopic {
-    height: 125vh;
+  h6.bionav {
+    font-size: 6vh;
   }
 
-  .aboutnav {
-    font-size: 30px;
+  .biopic {
+    height: 140vh;
   }
 
   .quote {
-    font-size: 25px;
+    font-size: 4vh;
   }
 
   .bio {
-    font-size: 30px;
+    font-size: 4vh;
+    margin-top: -20%;
   }
 }
 
 @media only screen and (min-width: 2560px) {
+  h6.bionav {
+    font-size: 6.5vh;
+  }
 
-  .aboutnav {
-    font-size: 45px;
+  .biopic {
+    height: 160vh;
+    margin-top: -15%;
   }
 
   .quote {
-    font-size: 40px;
+    top: 25%;
+    font-size: 4vh;
   }
 
   .bio {
-    font-size: 45px;
+    font-size: 4.5vh;
+    margin-top: -25%;
   }
 }
