@@ -1,39 +1,18 @@
 .containerQ {
-  margin-left: 50%;
-  padding-top: 25%;
+  position: relative;
+  top: 32%;
+  left: 50%;
   max-width: 45%;
 }
 
 @media only screen and (min-width: 375px) {
   .containerQ {
-    padding-top: 20%;
-    max-width: 40%;
+    top: 25%;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 2560px) {
   .containerQ {
-    padding-top: 8%;
-    max-width: 35%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .containerQ {
-    padding-top: 17%;
-    max-width: 40%;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .containerQ {
-    padding-top: 10%;
-    max-width: 35%;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .containerQ {
-    max-width: 40%;
+    top: 30%;
   }
 }

@@ -16,11 +16,8 @@
 .quote {
   font-family: 'lato', sans-serif;
   display: block;
-  font-size: 2vh;
+  font-size: 1.4vh;
   font-weight: 600;
-  position: absolute;
-  top: 19%;
-  margin-right: 5%;
   color: black;
 }
 
@@ -31,55 +28,54 @@
   font-family: 'Source Sans Pro', sans-serif;
   position: relative;
   right: 5%;
-  color: #dee2e6;
-  font-size: 4.5vh;
   padding-top: 4%;
-  margin-bottom: -5%;
+  margin-bottom: -20%;
 }
 
 h6.bionav {
   color: #dee2e6;
-  font-size: 4vh;
+  font-size: 3vh;
   line-height: 1.5;
 }
 
 .bio {
   display: inline-block;
   font-family: 'lato', sans-serif;
-  font-size: 3vh;
-  line-height: 1.2;
+  font-size: 2.2vh;
+  line-height: 1.3;
   color: #dee2e6;
-  position: relative;
-  margin-top: -20%;
   margin-bottom: 75%;
 }
 
 @media only screen and (min-width: 375px) {
   .quote {
-    font-size: 2.1vh;
+    font-size: 1.7vh;
   }
 
   .bio {
-    margin-top: -14%;
+    line-height: 1.4;
+  }
+
+  .aboutnav {
+    margin-bottom: -15%;
   }
 }
 
 @media only screen and (min-width: 425px) {
   .quote {
-    font-size: 2.3vh;
+    font-size: 1.8vh;
   }
   .aboutnav {
-    margin-bottom: 2%;
+    margin-bottom: -9%;
   }
-
   .bio {
-    margin-top: -10%;
+    font-size: 2.3vh;
   }
 }
 
 @media only screen and (min-width: 768px) {
   h6.bionav {
-    font-size: 4.5vh;
+    font-size: 3vh;
   }
 
   .biopic {
@@ -88,12 +84,11 @@ h6.bionav {
   }
 
   .quote {
-    font-size: 3.7vh;
+    font-size: 2.5vh;
   }
 
   .bio {
-    font-size: 4vh;
-    margin-top: -18%;
+    font-size: 2.7vh;
   }
 }
 
@@ -103,7 +98,7 @@ h6.bionav {
   }
 
   h6.bionav {
-    font-size: 5vh;
+    font-size: 3.3vh;
   }
 
   .biopic {
@@ -111,20 +106,22 @@ h6.bionav {
   }
 
   .quote {
-    margin-right: 10%;
-    font-size: 4vh;
+    font-size: 2.5vh;
     line-height: 1.4;
   }
 
   .bio {
-    font-size: 4vh;
-    margin-top: -18%;
+    font-size: 2.6vh;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   h6.bionav {
-    font-size: 6vh;
+    font-size: 4vh;
+  }
+
+  .aboutnav {
+    margin-bottom: -13%;
   }
 
   .biopic {
@@ -132,32 +129,17 @@ h6.bionav {
   }
 
   .quote {
-    font-size: 4vh;
+    font-size: 2.6vh;
   }
 
   .bio {
-    font-size: 4vh;
-    margin-top: -20%;
+    font-size: 2.6vh;
   }
 }
 
 @media only screen and (min-width: 2560px) {
-  h6.bionav {
-    font-size: 6.5vh;
-  }
-
   .biopic {
     height: 160vh;
     margin-top: -15%;
-  }
-
-  .quote {
-    top: 25%;
-    font-size: 4vh;
-  }
-
-  .bio {
-    font-size: 4.5vh;
-    margin-top: -25%;
   }
 }

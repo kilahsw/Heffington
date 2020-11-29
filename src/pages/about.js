@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 import Container from '../components/containerBio'
 import ContainerQ from '../components/containerQuote'
-import ContainerBp from '../components/containerBioPic'
 import Layout from '../components/layout'
 
 import '../css/about.css'

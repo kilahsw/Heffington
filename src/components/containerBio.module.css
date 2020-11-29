@@ -1,14 +1,37 @@
 .container {
-  margin: 8%;
+  position: relative;
+  margin-top: -15%;
+  margin-left: 6%;
+  margin-right: 6%;
   max-width: 100%;
+}
+
+@media only screen and (min-width: 375px) {
+  .container {
+    margin-top: -8%;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .container {
+    margin-top: -3%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .container {
-    padding-top: 2%;
+    margin-top: -7%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    margin-top: -10%;
   }
 }
 
 @media only screen and (min-width: 2560px) {
-    
+  .container {
+    margin-top: -20%;
+  }
 }
