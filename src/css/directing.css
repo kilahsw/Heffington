@@ -19,7 +19,7 @@
 #direct {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 p.dtitles {
@@ -67,10 +67,10 @@ p.dtitles {
 }
 
 @media only screen and (min-width: 1440px) {
-    .dheader {
-        font-size: 10vh;
-    }
-    .dsub {
-        font-size: 6vh;
-    }
+  .dheader {
+    font-size: 10vh;
+  }
+  .dsub {
+    font-size: 6vh;
+  }
 }

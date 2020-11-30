@@ -32,6 +32,7 @@ export default function Choreo() {
   const choreo = data.allContentfulChoreography.edges
   const home = 'home'
   const direct = 'directing'
+  const about = 'about'
 
   return (
     <div>
@@ -41,7 +42,8 @@ export default function Choreo() {
         </div>
         <div className="csub">
           <Link to={`/`}>{home}</Link> |{' '}
-          <Link to={`/directing/`}>{direct}</Link>
+          <Link to={`/directing/`}>{direct}</Link> |{' '}
+          <Link to={`/about/`}>{about}</Link>
         </div>
         <br />
         <div id="choreo">

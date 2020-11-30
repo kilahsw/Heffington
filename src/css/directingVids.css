@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+
+.dvids .dvidsubs .dvidnav {
+  font-family: 'source sans pro', sans-serif;
+}
+
+.dvids {
+  font-weight: 600;
+  font-size: 4vh;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+.dvidsubs {
+  font-weight: 600;
+  font-size: 3vh;
+}
+
+.dvideos {
+  margin: 5%;
+  max-width: 100%;
+}
+
+.dvidnav {
+  font-weight: 600;
+  font-size: 3vh;
+  text-align: center;
+}

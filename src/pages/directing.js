@@ -31,6 +31,7 @@ export default function Directing() {
   const direct = data.allContentfulDirecting.edges
   const home = 'home'
   const choreo = 'choreography'
+  const about = 'about'
 
   return (
     <div>
@@ -40,7 +41,7 @@ export default function Directing() {
           <br />
         </div>
         <div className="dsub">
-          <Link to={`/`}>{home}</Link> | <Link to={`/choreo/`}>{choreo}</Link>
+  <Link to={`/`}>{home}</Link> | <Link to={`/choreo/`}>{choreo}</Link> | <Link to={`/about/`}>{about}</Link> 
         </div>
         <br />
         <div id="direct">

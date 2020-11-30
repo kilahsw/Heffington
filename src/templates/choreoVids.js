@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 // import get from 'lodash/get'
 import Img from 'gatsby-image'
+import choreoVid from '../css/choreoVids.css'
 import Layout from '../components/layout'
 
 export default function choreoTemplate(props) {
@@ -11,8 +12,8 @@ export default function choreoTemplate(props) {
 
   const title = object.node.title
   const director = object.node.director
-  const home = 'HOME'
-  const back = 'BACK'
+  const home = 'home'
+  const back = 'back'
   // const video = object.node.test.childMarkdownRemark.html
 
   console.log(props)
@@ -22,13 +23,15 @@ export default function choreoTemplate(props) {
       <div>
         <Helmet title={`${tabTitle} | ${title}`} />
         <div className="chorheader" style={{ textAlign: 'center' }}>
-          <h1>CHOREOGRAPHY</h1>
+          <h1 className="cvids">CHOREOGRAPHY</h1>
         </div>
         <br />
         <div>
-          <h1 style={{ textAlign: 'center' }}>{title}</h1>
+          <h1 className="cvidsubs" style={{ textAlign: 'center' }}>
+            {title}
+          </h1>
         </div>
-        <div
+        <div className='cvideos' 
           dangerouslySetInnerHTML={{
             __html:
               props.data.allContentfulChoreography.edges[0].node.videoIFrame
@@ -37,10 +40,10 @@ export default function choreoTemplate(props) {
         ></div>
         <br />
         <div>
-          <p>{director}</p>
+          <p className="cdir">{director}</p>
         </div>
         <br />
-        <div>
+        <div className="cvidnav">
           <Link to={`/`}>{home}</Link> | <Link to={`/choreo`}>{back}</Link>
         </div>
       </div>
