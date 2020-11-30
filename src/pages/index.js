@@ -38,6 +38,8 @@ export default function RootIndex() {
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
   
+  //added line 48-49 to address deployment error of 'window' undefined, caused by gatsby use of webpack//
+
   return (
     <div>
       <Layout>
@@ -87,6 +89,13 @@ export default function RootIndex() {
     </div>
   )
 }
+
+
+
+
+
+
+
 
 
 //original ternary for window pic change - i feel like this could work if i could figure out wher to put the window !== 'undefined' statement. It would have to come before the const was declared...
