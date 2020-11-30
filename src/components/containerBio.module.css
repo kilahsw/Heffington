@@ -14,24 +14,24 @@
 
 @media only screen and (min-width: 425px) {
   .container {
-    margin-top: -3%;
+    padding-top: 35px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .container {
-    margin-top: -7%;
+    margin-top: 20%;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .container {
-    margin-top: -10%;
+    margin-top: 25%;
   }
 }
 
 @media only screen and (min-width: 2560px) {
   .container {
-    margin-top: -20%;
+    margin-top: 15%;
   }
 }

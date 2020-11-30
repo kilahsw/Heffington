@@ -1,13 +1,13 @@
 .containerQ {
   position: relative;
-  top: 32%;
+  top: 35%;
   left: 50%;
   max-width: 45%;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 375px) and (max-height: 812px){
   .containerQ {
-    top: 25%;
+    top: 35%;
   }
 }
 

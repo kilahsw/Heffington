@@ -1,49 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
 
 .cheader {
-    font-family: 'source sans pro', sans-serif;
-    font-size: 3vh;
-    font-weight: 600;
-    text-align: center;
-    position: relative;
-    margin-top: 10%;
+  font-family: 'source sans pro', sans-serif;
+  font-size: 3.5vh;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  margin-top: 10%;
 }
 
 .csub {
-    font-family: 'source sans pro', sans-serif;
-    font-size: 2.8vh;
-    text-align: center;  
+  font-family: 'source sans pro', sans-serif;
+  font-size: 3vh;
+  text-align: center;
 }
 
-
 #choreo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
-p.titles {
-    font-family: 'source sans pro';
-    font-weight: 600;
-    font-size: 2vh;
-    text-align: center;
-    margin-bottom: .2rem;
+p.ctitles {
+  font-family: 'source sans pro';
+  font-weight: 600;
+  font-size: 2.3vh;
+  text-align: center;
+  margin-bottom: 0.2rem;
 }
 
 p.director {
-    font-family: 'lato', sans-serif;
-    font-weight: bold;
-    font-size: 1.4vh;
-    padding-top: 2px;
+  font-family: 'lato', sans-serif;
+  font-weight: bold;
+  font-size: 1.5vh;
+  text-align: center;
+  padding-top: 2px;
+}
+
+@media only screen and (min-width: 375px) {
+
+  p.ctitles {
+    font-size: 2.6vh;
+  }
+
+  p.director {
+    font-size: 1.5vh;
+  }
 }
 
 @media only screen and (min-width: 425px) {
-
     .cheader {
-        
+        font-size: 4vh;
+    }
+
+    .csub {
+        font-size: 3.5vh;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .cheader {
+        font-size: 5vh;
+    }
+    
+    .csub {
+        font-size: 4vh;
+    }
+
+    p.ctitles {
+        font-size: 2.7vh;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cheader {
+        font-size: 6vh;
+    }
+
+    .csub {
+        font-size: 4.5vh;
+    }
+
+    p.ctitles {
+        font-size: 3vh;
+    }
+
+    p.director {
+        font-size: 2vh;
+        padding-top: 3px;
+    }
+}
+
+@media only screen and (min-width: 2560px) {
+    .cheader {
+        font-size: 7vh;
+    }
+
+    .csub {
+        font-size: 5.5vh;
+    }
+
+    p.ctitles {
+        font-size: 3.5vh;
+    }
+
+    p.director {
+        font-size: 2.5vh;
     }
 }

@@ -60,7 +60,7 @@ export default function RootIndex() {
                   display: inline-block;
                 `}
               >
-                ABOUT
+                about
               </h5>
             </Link>
             <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
@@ -69,7 +69,7 @@ export default function RootIndex() {
                   display: inline-block;
                 `}
               >
-                CHOREOGRAPHY
+                choreography
               </h5>
             </Link>
             <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
@@ -78,7 +78,7 @@ export default function RootIndex() {
                   display: inline-block;
                 `}
               >
-                DIRECTING
+                directing
               </h5>
             </Link>
           </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
 import ContainerI from '../components/containerImg'
 import Layout from '../components/layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -50,11 +49,10 @@ export default function Choreo() {
             <ContainerI>
               <div key={index}>
                 <Link to={`/choreo/${work.node.titleUrl}`}>
-                  <p className="titles">{work.node.title}</p>
+                  <p className="ctitles">{work.node.title}</p>
                   <Img
-                    className="cv"
                     fluid={work.node.thumbnail.fluid}
-                    alt="pictures of choreo work"
+                    alt="pictures of choreography work"
                     className="rounded-lg"
                   />
                 </Link>

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
+
+.dheader {
+  font-family: 'source sans pro', sans-serif;
+  font-size: 4.5vh;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  margin-top: 10%;
+  margin-bottom: -5%;
+}
+
+.dsub {
+  font-family: 'source sans pro', sans-serif;
+  font-size: 3vh;
+  text-align: center;
+}
+
+#direct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+p.dtitles {
+  font-family: 'source sans pro';
+  font-weight: 600;
+  font-size: 2.6vh;
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+
+@media only screen and (min-width: 375px) {
+  .dheader {
+    font-size: 5vh;
+  }
+
+  .dsub {
+    font-size: 4vh;
+  }
+
+  p.dtitles {
+    font-size: 3vh;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .dheader {
+    font-size: 6vh;
+  }
+
+  .dsub {
+    font-size: 4.5vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  p.dtitles {
+    word-wrap: break-word;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .dheader {
+    margin-bottom: -2%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+    .dheader {
+        font-size: 10vh;
+    }
+    .dsub {
+        font-size: 6vh;
+    }
+}
