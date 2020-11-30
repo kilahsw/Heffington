@@ -29,6 +29,12 @@ export default function About() {
                 html
               }
             }
+            agencyPic {
+              fluid(maxWidth: 900, quality: 100) {
+                ...GatsbyContentfulFluid
+              }
+              id
+            }
           }
         }
       }
@@ -67,6 +73,11 @@ export default function About() {
         <Container>
           <div className="bottom">
             <p className="bio" dangerouslySetInnerHTML={{ __html: bio }} />
+          </div>
+          <div className="agency">
+            <Link href="mailto:kevin.lin@caa.com">
+              <Img fluid={agency.fluid} className="agencypic"></Img>
+            </Link>
           </div>
         </Container>
       </Layout>

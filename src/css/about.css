@@ -5,6 +5,8 @@
 }
 .bottom {
   background-color: black;
+  margin-bottom: 70%;
+  max-width: 100%;
 }
 
 .biopic {
@@ -42,9 +44,20 @@ h4.bionav {
   display: inline-block;
   font-family: 'lato', sans-serif;
   font-size: 2.2vh;
+  padding-top: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
   line-height: 1.3;
   color: #dee2e6;
   margin-bottom: 75%;
+}
+
+.agencypic {
+  position: fixed;
+  max-width: 6%;
+  margin-top: -145%;
+  margin-left: 40px;
+  /* margin-right: 32%; */
 }
 
 @media only screen and (min-width: 375px) {
@@ -69,7 +82,6 @@ h4.bionav {
 }
 
 @media only screen and (min-width: 425px) {
-
   div.aboutnav {
     margin-top: 5%;
     margin-left: 0%;
@@ -78,7 +90,7 @@ h4.bionav {
   .quote {
     font-size: 1.8vh;
   }
-  
+
   .bio {
     font-size: 2.3vh;
     margin-top: 10%;
@@ -86,10 +98,8 @@ h4.bionav {
 }
 
 @media only screen and (min-width: 768px) {
-
   div.aboutnav {
     margin-left: 10%;
-    
   }
 
   h4.bionav {
@@ -111,8 +121,6 @@ h4.bionav {
 }
 
 @media only screen and (min-width: 1024px) {
-  
-
   h4.bionav {
     font-size: 4vh;
     line-height: 1.3;
@@ -152,14 +160,12 @@ h4.bionav {
 }
 
 @media only screen and (min-width: 1440px) and (min-height: 900px) {
-
   .biopic {
     height: 155vh;
   }
 }
 
 @media only screen and (min-width: 2560px) {
-
   div.aboutnav {
     margin-top: 15%;
   }
