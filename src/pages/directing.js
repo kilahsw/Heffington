@@ -35,13 +35,13 @@ export default function Directing() {
 
   return (
     <div>
-      <Layout>
         <div>
           <h6 className="dheader">DIRECTING</h6>
           <br />
         </div>
         <div className="dsub">
-  <Link to={`/`}>{home}</Link> | <Link to={`/choreo/`}>{choreo}</Link> | <Link to={`/about/`}>{about}</Link> 
+          <Link to={`/`}>{home}</Link> | <Link to={`/choreo/`}>{choreo}</Link> |{' '}
+          <Link to={`/about/`}>{about}</Link>
         </div>
         <br />
         <div id="direct">
@@ -61,7 +61,6 @@ export default function Directing() {
             </ContainerI>
           ))}
         </div>
-      </Layout>
     </div>
   )
 }

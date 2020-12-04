@@ -92,7 +92,9 @@ h4.bionav {
 
   .bio {
     font-size: 2.3vh;
-    margin-top: 10%;
+    margin-top: 1%;
+    padding-top: 10px;
+
   }
 }
 
@@ -166,27 +168,11 @@ h4.bionav {
 
 @media only screen and (min-width: 2560px) {
   div.aboutnav {
-    margin-top: 15%;
+    padding-top: 400px;
   }
 
   .biopic {
     height: 160vh;
-    margin-top: -15%;
+    margin-top: 5%;
   }
 }
-
-/* .aboutnav {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  font-family: 'Source Sans Pro', sans-serif;
-  position: relative;
-  right: 5%;
-  padding-top: 4%;
-
-} */
-
-/* .biopic.gbi--607130445-xacoxnMxdMJhCXkHsVv8i4:before {
-  margin: 0;
-  padding: 0;
-} */

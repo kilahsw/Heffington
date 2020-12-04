@@ -21,6 +21,7 @@ export default function Choreo() {
               id
             }
             director
+            id
           }
         }
       }
@@ -36,7 +37,6 @@ export default function Choreo() {
 
   return (
     <div>
-      <Layout>
         <div>
           <h6 className="cheader">CHOREOGRAPHY</h6>
         </div>
@@ -64,7 +64,6 @@ export default function Choreo() {
             </ContainerI>
           ))}
         </div>
-      </Layout>
     </div>
   )
 }

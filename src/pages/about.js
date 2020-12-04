@@ -54,7 +54,16 @@ export default function About() {
       <Layout>
         <BackgroundImage className="biopic" fluid={img.fluid}>
           <ContainerNav>
-            <div className="aboutnav">
+            <div
+              style={{
+                margin: `1rem auto`,
+                marginLeft: `10%`,
+                // marginRight: `3rem`,
+                maxWidth: 650
+                // padding: `-10`,
+              }}
+              className="aboutnav"
+            >
               <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
                 <h4 className="bionav">choreography</h4>
               </Link>
@@ -75,9 +84,9 @@ export default function About() {
             <p className="bio" dangerouslySetInnerHTML={{ __html: bio }} />
           </div>
           <div className="agency">
-            <Link href="mailto:kevin.lin@caa.com">
+            <a href="mailto:kevin.lin@caa.com">
               <Img fluid={agency.fluid} className="agencypic"></Img>
-            </Link>
+            </a>
           </div>
         </Container>
       </Layout>

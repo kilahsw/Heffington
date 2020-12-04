@@ -4,20 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 // import Navigation from './navigation'
 
 export default function Layout({ children }) {
-  // const data = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       allContentfulPerson {
-  //         edges {
-  //           node {
-  //             image {
-  //               id
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
+  
   
   return(
   <div>
@@ -48,3 +35,19 @@ export default function Layout({ children }) {
 //   <Navigation />
 //   {children}
 // </Container>
+
+//was originally in the space above return
+// const data = useStaticQuery(
+  //   graphql`
+  //     query {
+  //       allContentfulPerson {
+  //         edges {
+  //           node {
+  //             image {
+  //               id
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `

@@ -37,86 +37,76 @@ export default function RootIndex() {
   const imgDesk = data.allContentfulPerson.edges[0].node.imageDesk
   const title = data.allContentfulPerson.edges[0].node.title
   const subtitle = data.allContentfulPerson.edges[0].node.subtitle
-  
+
   //added line 48-49 to address deployment error of 'window' undefined, caused by gatsby use of webpack//
 
   return (
     <div>
-      <Layout>
-        <BackgroundImage
-          className="hero"
-          fluid={img.fluid}
-          {...(typeof window !== 'undefined' && window.innerWidth
-            ? window.innerWidth < 1024
-              ? data.allContentfulPerson.edges[0].node.image
-              : data.allContentfulPerson.edges[0].node.imageDesk
-            : null)}
-        >
-          <h1 className="name">{title}</h1>
-          <br />
-          <h2 className="description">{subtitle}</h2>
-          <div className="nav">
-            <Link to={`/about/`} style={{ textDecoration: 'none' }}>
-              <h5
-                css={`
-                  display: inline-block;
-                `}
-              >
-                about
-              </h5>
-            </Link>
-            <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
-              <h5
-                css={`
-                  display: inline-block;
-                `}
-              >
-                choreography
-              </h5>
-            </Link>
-            <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
-              <h5
-                css={`
-                  display: inline-block;
-                `}
-              >
-                directing
-              </h5>
-            </Link>
-          </div>
-        </BackgroundImage>
-      </Layout>
+      <BackgroundImage
+        className="hero"
+        fluid={img.fluid}
+        {...(typeof window !== 'undefined' && window.innerWidth
+          ? window.innerWidth < 1024
+            ? data.allContentfulPerson.edges[0].node.image
+            : data.allContentfulPerson.edges[0].node.imageDesk
+          : null)}
+      >
+        <h1 className="name">{title}</h1>
+        <br />
+        <h2 className="description">{subtitle}</h2>
+        <div className="nav">
+          <Link to={`/about/`} style={{ textDecoration: 'none' }}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              about
+            </h5>
+          </Link>
+          <Link to={`/choreo/`} style={{ textDecoration: 'none' }}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              choreography
+            </h5>
+          </Link>
+          <Link to={`/directing/`} style={{ textDecoration: 'none' }}>
+            <h5
+              css={`
+                display: inline-block;
+              `}
+            >
+              directing
+            </h5>
+          </Link>
+        </div>
+      </BackgroundImage>
     </div>
   )
 }
-
-
-
-
-
-
-
-
 
 //original ternary for window pic change - i feel like this could work if i could figure out wher to put the window !== 'undefined' statement. It would have to come before the const was declared...
 
 // const changePic = window.innerWidth
 // {...(changePic < 1024
-          //   ? data.allContentfulPerson.edges[0].node.image
-          //   : data.allContentfulPerson.edges[0].node.imageDesk)}
+//   ? data.allContentfulPerson.edges[0].node.image
+//   : data.allContentfulPerson.edges[0].node.imageDesk)}
 
 //failed useEffect and useState
 
 // const [changePic, setChangePic] = useState({
-  //   width: 0,
-  // })
+//   width: 0,
+// })
 
-  // useEffect(() => {
-  //   function handleResize() {
-  //     setChangePic({
-  //       width: window.innerwidth
-  //     })
-  //   }
-  //   window.addEventListener("change", handleResize)
-  //   handleResize()
-  // }, [])
+// useEffect(() => {
+//   function handleResize() {
+//     setChangePic({
+//       width: window.innerwidth
+//     })
+//   }
+//   window.addEventListener("change", handleResize)
+//   handleResize()
+// }, [])
